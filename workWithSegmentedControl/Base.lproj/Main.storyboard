@@ -35,14 +35,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fyd-Ge-kVd">
+                                <rect key="frame" x="43" y="270" width="307" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="OU8-yo-gX2"/>
+                                </constraints>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="fyd-Ge-kVd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="1vW-Gz-2UJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fyd-Ge-kVd" secondAttribute="trailing" constant="45" id="BaS-Hl-RGr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B7X-B3-YAu" secondAttribute="trailing" constant="45" id="IFJ-2C-R3n"/>
                             <constraint firstItem="B7X-B3-YAu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="Jce-Ng-SbB"/>
                             <constraint firstItem="XkU-4L-7BM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Olw-ec-REU"/>
                             <constraint firstItem="XkU-4L-7BM" firstAttribute="top" secondItem="B7X-B3-YAu" secondAttribute="bottom" constant="50" id="TZt-to-1JK"/>
+                            <constraint firstItem="fyd-Ge-kVd" firstAttribute="top" secondItem="XkU-4L-7BM" secondAttribute="bottom" constant="57" id="Upp-zb-Ast"/>
                             <constraint firstItem="B7X-B3-YAu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="53" id="W9N-RI-4t1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XkU-4L-7BM" secondAttribute="trailing" constant="20" id="g7y-FR-coA"/>
                         </constraints>
