@@ -40,6 +40,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="OU8-yo-gX2"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="uWJ-Lu-3tk"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -59,6 +62,7 @@
                     <connections>
                         <outlet property="label" destination="XkU-4L-7BM" id="F4o-w4-OSS"/>
                         <outlet property="segmentedControl" destination="B7X-B3-YAu" id="C9k-uZ-Wgy"/>
+                        <outlet property="slider" destination="fyd-Ge-kVd" id="Ybr-7f-FUy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
