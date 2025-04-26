@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet var label: UILabel!
     @IBOutlet var slider: UISlider!
     
+    @IBOutlet var textField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,6 +58,24 @@ class ViewController: UIViewController {
         
         let backgroundColor = self.view.backgroundColor
         self.view.backgroundColor = backgroundColor?.withAlphaComponent(CGFloat(sender.value))
+    }
+    @IBAction func donePressed(_ sender: UIButton) {
+        
+        guard let text = textField.text, !text.isEmpty else { return }
+        
+        if !text.allSatisfy({ $0.isLetter }) {
+            
+            let alert = UIAlertController(title: "Wrong format", message: "Please enter your name", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "ok", style: .default)
+            alert.addAction(okAction)
+            present(alert, animated: true)
+
+        } else {
+            
+            label.text = text
+            textField.text = nil
+        }
+        
     }
 }
 
