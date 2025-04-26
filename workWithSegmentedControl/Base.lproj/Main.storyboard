@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +13,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="workWithSegmentedControl" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" alpha="0.80000000000000004" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -44,11 +45,30 @@
                                     <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="uWJ-Lu-3tk"/>
                                 </connections>
                             </slider>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FoG-c3-xQz">
+                                <rect key="frame" x="20" y="349" width="353" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="asl-RQ-fTH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OtP-oA-977">
+                                <rect key="frame" x="112" y="427" width="167" height="35"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="tintColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Done"/>
+                                <connections>
+                                    <action selector="donePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="csa-eR-Rf4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstItem="fyd-Ge-kVd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="1vW-Gz-2UJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OtP-oA-977" secondAttribute="trailing" constant="114" id="2Jy-Aa-x15"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fyd-Ge-kVd" secondAttribute="trailing" constant="45" id="BaS-Hl-RGr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B7X-B3-YAu" secondAttribute="trailing" constant="45" id="IFJ-2C-R3n"/>
                             <constraint firstItem="B7X-B3-YAu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="Jce-Ng-SbB"/>
@@ -56,13 +76,19 @@
                             <constraint firstItem="XkU-4L-7BM" firstAttribute="top" secondItem="B7X-B3-YAu" secondAttribute="bottom" constant="50" id="TZt-to-1JK"/>
                             <constraint firstItem="fyd-Ge-kVd" firstAttribute="top" secondItem="XkU-4L-7BM" secondAttribute="bottom" constant="57" id="Upp-zb-Ast"/>
                             <constraint firstItem="B7X-B3-YAu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="53" id="W9N-RI-4t1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FoG-c3-xQz" secondAttribute="trailing" constant="20" id="bAM-mc-Dcw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XkU-4L-7BM" secondAttribute="trailing" constant="20" id="g7y-FR-coA"/>
+                            <constraint firstItem="OtP-oA-977" firstAttribute="top" secondItem="FoG-c3-xQz" secondAttribute="bottom" constant="44" id="mDB-1W-Ehs"/>
+                            <constraint firstItem="FoG-c3-xQz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="uGO-as-bET"/>
+                            <constraint firstItem="OtP-oA-977" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="112" id="ue7-eZ-coN"/>
+                            <constraint firstItem="FoG-c3-xQz" firstAttribute="top" secondItem="fyd-Ge-kVd" secondAttribute="bottom" constant="50" id="vDo-dh-BZz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="label" destination="XkU-4L-7BM" id="F4o-w4-OSS"/>
                         <outlet property="segmentedControl" destination="B7X-B3-YAu" id="C9k-uZ-Wgy"/>
                         <outlet property="slider" destination="fyd-Ge-kVd" id="Ybr-7f-FUy"/>
+                        <outlet property="textField" destination="FoG-c3-xQz" id="G75-yv-phE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -71,8 +97,14 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
