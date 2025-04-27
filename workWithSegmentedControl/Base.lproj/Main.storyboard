@@ -71,23 +71,43 @@
                                         </connections>
                                     </button>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="46T-NI-OZa">
-                                        <rect key="frame" x="20" y="402" width="353" height="170"/>
+                                        <rect key="frame" x="20" y="402" width="353" height="34.333333333333314"/>
                                         <connections>
                                             <action selector="changeDate:" destination="BYZ-38-t0r" eventType="valueChanged" id="uTl-xr-jFu"/>
                                         </connections>
                                     </datePicker>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gW2-Qr-7lY">
+                                        <rect key="frame" x="319" y="466.33333333333331" width="51" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="uep-DV-sqq"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="switchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="g5y-XX-bEm"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Скрыть все элементы" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxU-35-aGd">
+                                        <rect key="frame" x="20" y="459" width="281" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="46T-NI-OZa" secondAttribute="bottom" constant="777" id="2iy-Jc-n17"/>
                                     <constraint firstItem="46T-NI-OZa" firstAttribute="top" secondItem="OtP-oA-977" secondAttribute="bottom" constant="32" id="72g-Ln-hx8"/>
                                     <constraint firstItem="FoG-c3-xQz" firstAttribute="leading" secondItem="XkU-4L-7BM" secondAttribute="leading" id="7Ph-OQ-ze1"/>
                                     <constraint firstItem="46T-NI-OZa" firstAttribute="leading" secondItem="C8i-np-Ol9" secondAttribute="leading" constant="20" id="8fb-0d-IlB"/>
+                                    <constraint firstItem="C8i-np-Ol9" firstAttribute="bottom" secondItem="FxU-35-aGd" secondAttribute="bottom" constant="845" id="CTn-ly-g4W"/>
+                                    <constraint firstItem="C8i-np-Ol9" firstAttribute="trailing" secondItem="gW2-Qr-7lY" secondAttribute="trailing" constant="25" id="E1b-GD-dYp"/>
+                                    <constraint firstItem="gW2-Qr-7lY" firstAttribute="top" secondItem="46T-NI-OZa" secondAttribute="bottom" constant="30" id="EoR-YO-Z5C"/>
                                     <constraint firstItem="FoG-c3-xQz" firstAttribute="top" secondItem="fyd-Ge-kVd" secondAttribute="bottom" constant="50" id="Ibs-em-FZJ"/>
                                     <constraint firstItem="FoG-c3-xQz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XkU-4L-7BM" secondAttribute="leading" id="Lsa-Ga-qgv"/>
                                     <constraint firstItem="XkU-4L-7BM" firstAttribute="top" secondItem="B7X-B3-YAu" secondAttribute="bottom" constant="50" id="Mha-z0-tY1"/>
                                     <constraint firstItem="B7X-B3-YAu" firstAttribute="centerX" secondItem="qXn-10-As8" secondAttribute="centerX" id="NHz-k8-akL"/>
                                     <constraint firstAttribute="trailing" secondItem="FoG-c3-xQz" secondAttribute="trailing" constant="20" id="U8A-pd-XRF"/>
+                                    <constraint firstItem="FxU-35-aGd" firstAttribute="leading" secondItem="C8i-np-Ol9" secondAttribute="leading" constant="20" id="VJ1-2d-PLN"/>
+                                    <constraint firstAttribute="bottom" secondItem="FxU-35-aGd" secondAttribute="bottom" constant="845" id="XQr-4F-Mbm"/>
                                     <constraint firstItem="OtP-oA-977" firstAttribute="leading" secondItem="C8i-np-Ol9" secondAttribute="leading" constant="112" id="af3-T8-iNT"/>
+                                    <constraint firstItem="gW2-Qr-7lY" firstAttribute="leading" secondItem="FxU-35-aGd" secondAttribute="trailing" constant="18" id="bDa-AV-YLV"/>
                                     <constraint firstItem="FoG-c3-xQz" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XkU-4L-7BM" secondAttribute="trailing" id="bWU-Gg-loH"/>
                                     <constraint firstItem="OtP-oA-977" firstAttribute="top" secondItem="FoG-c3-xQz" secondAttribute="bottom" constant="44" id="ccO-x8-0hh"/>
                                     <constraint firstItem="C8i-np-Ol9" firstAttribute="trailing" secondItem="46T-NI-OZa" secondAttribute="trailing" constant="20" id="dYm-nw-H3J"/>
@@ -96,30 +116,33 @@
                                     <constraint firstItem="XkU-4L-7BM" firstAttribute="centerX" secondItem="qXn-10-As8" secondAttribute="centerX" id="gyG-tf-bAJ"/>
                                     <constraint firstItem="C8i-np-Ol9" firstAttribute="trailing" secondItem="OtP-oA-977" secondAttribute="trailing" constant="114" id="h0c-WL-y0E"/>
                                     <constraint firstItem="C8i-np-Ol9" firstAttribute="bottom" secondItem="OtP-oA-977" secondAttribute="bottom" constant="979" id="hCJ-IR-96O"/>
+                                    <constraint firstItem="FxU-35-aGd" firstAttribute="top" secondItem="46T-NI-OZa" secondAttribute="bottom" constant="22.670000000000002" id="hT9-K1-Zrm"/>
                                     <constraint firstItem="fyd-Ge-kVd" firstAttribute="centerX" secondItem="qXn-10-As8" secondAttribute="centerX" id="hgx-5N-iRD"/>
+                                    <constraint firstItem="C8i-np-Ol9" firstAttribute="bottom" secondItem="gW2-Qr-7lY" secondAttribute="bottom" constant="851.66999999999996" id="kIz-c7-9h9"/>
                                     <constraint firstItem="B7X-B3-YAu" firstAttribute="leading" secondItem="fyd-Ge-kVd" secondAttribute="leading" id="mhG-ON-XfA"/>
                                     <constraint firstItem="B7X-B3-YAu" firstAttribute="top" secondItem="C8i-np-Ol9" secondAttribute="top" constant="20" id="sQM-tA-Cko"/>
                                     <constraint firstItem="B7X-B3-YAu" firstAttribute="centerX" secondItem="XkU-4L-7BM" secondAttribute="centerX" id="tkt-fr-Wkt"/>
-                                    <constraint firstItem="C8i-np-Ol9" firstAttribute="bottom" secondItem="46T-NI-OZa" secondAttribute="bottom" constant="777" id="wFc-qz-PqK"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="xAe-5I-0Sj"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="C8i-np-Ol9"/>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
                         <constraints>
+                            <constraint firstItem="qXn-10-As8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-20" id="0XL-cJ-hxw"/>
                             <constraint firstItem="qXn-10-As8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OhA-oN-VpK"/>
                             <constraint firstItem="qXn-10-As8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cjt-Il-I6h"/>
-                            <constraint firstItem="qXn-10-As8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-20" id="vCT-Zu-Zpi"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="393" height="1400"/>
                     <connections>
                         <outlet property="datePicker" destination="46T-NI-OZa" id="m47-Zh-jIH"/>
+                        <outlet property="doneButton" destination="OtP-oA-977" id="qCg-vB-0Lf"/>
                         <outlet property="label" destination="XkU-4L-7BM" id="F4o-w4-OSS"/>
                         <outlet property="segmentedControl" destination="B7X-B3-YAu" id="C9k-uZ-Wgy"/>
                         <outlet property="slider" destination="fyd-Ge-kVd" id="Ybr-7f-FUy"/>
+                        <outlet property="switchLabel" destination="FxU-35-aGd" id="Ovc-Mq-BUd"/>
                         <outlet property="textField" destination="FoG-c3-xQz" id="G75-yv-phE"/>
                     </connections>
                 </viewController>
@@ -135,8 +158,8 @@
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

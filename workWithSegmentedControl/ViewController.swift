@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet var label: UILabel!
     @IBOutlet var slider: UISlider!
     
+    @IBOutlet var doneButton: UISwitch!
+    @IBOutlet var switchLabel: UILabel!
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var textField: UITextField!
     override func viewDidLoad() {
@@ -93,5 +95,19 @@ class ViewController: UIViewController {
         label.text = dateValue
     }
     
+    @IBAction func switchAction(_ sender: UISwitch) {
+        segmentedControl.isHidden = !segmentedControl.isHidden
+        label.isHidden = !label.isHidden
+        slider.isHidden = !slider.isHidden
+        textField.isHidden = !textField.isHidden
+        datePicker.isHidden = !datePicker.isHidden
+        doneButton.isHidden = !doneButton.isHidden
+        
+        if sender.isOn {
+            switchLabel.text = "Отобразить все элементы"
+        } else {
+            switchLabel.text = "Скрыть все элементы"
+        }
+    }
 }
 
