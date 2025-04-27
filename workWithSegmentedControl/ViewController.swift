@@ -8,11 +8,19 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var uiElements = ["UISegmentedControl",
+                      "UILabel",
+                      "UISlider",
+                      "UITextField",
+                      "UIButton",
+                      "UIDatePicker"]
+    
+    var selectedElement: String?
 
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var label: UILabel!
     @IBOutlet var slider: UISlider!
-    
     @IBOutlet var doneButton: UISwitch!
     @IBOutlet var switchLabel: UILabel!
     @IBOutlet var datePicker: UIDatePicker!
@@ -37,6 +45,52 @@ class ViewController: UIViewController {
         
         datePicker.locale = Locale(identifier: "ru_RU")
         
+        choiceUiElement()
+        createToolbar()
+    }
+    
+    func hideAllElement() {
+        segmentedControl.isHidden = true
+        label.isHidden = true
+        slider.isHidden = true
+        doneButton.isHidden = true
+        datePicker.isHidden = true
+        
+    }
+    
+    func choiceUiElement() {
+        
+        let elementPicker = UIPickerView()
+        elementPicker.delegate = self
+        
+        textField.inputView = elementPicker
+        
+        // Customization
+        elementPicker.backgroundColor = .brown
+    }
+    
+    func createToolbar() {
+        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done",
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(dismissKeyboard))
+        
+        toolbar.setItems([doneButton], animated: true)
+        toolbar.isUserInteractionEnabled = true
+        
+        textField.inputAccessoryView = toolbar
+        
+        // Customization
+        toolbar.tintColor = .white
+        toolbar.barTintColor = .brown
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 
 
@@ -111,3 +165,69 @@ class ViewController: UIViewController {
     }
 }
 
+
+extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return uiElements.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return uiElements[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        selectedElement = uiElements[row]
+        textField.text = selectedElement
+        
+        switch row {
+        case 0:
+            hideAllElement()
+            segmentedControl.isHidden = false
+        case 1:
+            hideAllElement()
+            label.isHidden = false
+        case 2:
+            hideAllElement()
+            slider.isHidden = false
+        case 3:
+            hideAllElement()
+        case 4:
+            hideAllElement()
+            doneButton.isHidden = false
+        case 5:
+            hideAllElement()
+            datePicker.isHidden = false
+        default:
+            hideAllElement()
+        }
+    
+    }
+    
+    func pickerView(_ pickerView: UIPickerView,
+                    viewForRow row: Int,
+                    forComponent component: Int,
+                    reusing view: UIView?) -> UIView {
+        
+        var pickerViewLabel = UILabel()
+        
+        if let currentLabel = view as? UILabel {
+            pickerViewLabel = currentLabel
+        } else {
+            pickerViewLabel = UILabel()
+        }
+        
+        pickerViewLabel.textColor = .white
+        pickerViewLabel.textAlignment = .center
+        pickerViewLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 23)
+        pickerViewLabel.text = uiElements[row]
+        
+        return pickerViewLabel
+    }
+    
+}
